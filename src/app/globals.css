@@ -1,0 +1,129 @@
+@import "tailwindcss";
+@custom-variant dark (&:is(.dark *));
+
+@theme {
+  /* User requested deep #3419e0 purple */
+  --color-purple-500: #4b31f0;
+  --color-purple-600: #3419e0;
+  --color-purple-700: #240ea3;
+}
+
+@layer components {
+  /* Hide scrollbar for the dashboard mockup */
+  .no-scrollbar::-webkit-scrollbar { display: none; }
+  .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+}
+
+@layer utilities {
+  .selection-purple::selection {
+    background-color: rgb(52 25 224 / 0.5); /* #3419e0 */
+  }
+  .selection-red::selection {
+    background-color: rgb(52 25 224 / 0.3); /* #3419e0 */
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
+
+:root {
+  color-scheme: light;
+}
+
+:root.dark {
+  color-scheme: dark;
+}
+
+body {
+  scroll-behavior: smooth;
+  font-family: var(--font-inter), sans-serif;
+}
+
+/* ── Custom Scrollbar ─────────────────────────────── */
+
+/* Webkit (Chrome, Safari, Edge) */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgb(52 25 224 / 0.3);
+  border-radius: 9999px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgb(52 25 224 / 0.6);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Dark mode scrollbar */
+.dark ::-webkit-scrollbar-thumb,
+:root.dark ::-webkit-scrollbar-thumb {
+  background: rgb(75 49 240 / 0.4);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover,
+:root.dark ::-webkit-scrollbar-thumb:hover {
+  background: rgb(75 49 240 / 0.7);
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+/* Firefox */
+html {
+  scrollbar-width: thin;
+  scrollbar-color: rgb(52 25 224 / 0.3) transparent;
+}
+
+html.dark {
+  scrollbar-color: rgb(75 49 240 / 0.4) transparent;
+}
+
+@keyframes fadeInCustom {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes slideInFromBottom {
+  from { transform: translateY(2rem); opacity: 0; }
+  to { transform: translateY(0); opacity: 1; }
+}
+
+@keyframes slideInFromRight {
+  from { transform: translateX(2rem); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.95); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.animate-in {
+  animation-duration: 500ms;
+  animation-fill-mode: forwards;
+  animation-timing-function: cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.fade-in { animation-name: fadeInCustom; }
+.slide-in-from-bottom-8 { animation-name: slideInFromBottom; }
+.slide-in-from-right-8 { animation-name: slideInFromRight; }
+.zoom-in { animation-name: zoomIn; }
+

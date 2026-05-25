@@ -1,0 +1,86 @@
+# See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
+
+# =========================
+# VITAL SECRETS & VARIABLES
+# =========================
+.env
+.env.*
+!.env.example
+!.env.template
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+secrets.json
+credentials.json
+auth.json
+.secret
+id_rsa*
+
+# =========================
+# DEPENDENCIES
+# =========================
+/node_modules
+/.pnp
+.pnp.*
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/versions
+
+# =========================
+# NEXT.JS & BUILD OUTPUTS
+# =========================
+/.next/
+/out/
+/build
+/dist
+
+# =========================
+# LOGS & DEBUGGING
+# =========================
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+.pnpm-debug.log*
+lerna-debug.log*
+*.log
+/coverage
+
+# =========================
+# MISCELLANEOUS & OS
+# =========================
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+desktop.ini
+
+# =========================
+# IDEs & EDITORS
+# =========================
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.history/
+
+# =========================
+# VERCEL & DEPLOYMENT
+# =========================
+.vercel
+.serverless/
+.netlify/
+
+# =========================
+# TYPESCRIPT
+# =========================
+*.tsbuildinfo
+next-env.d.ts
