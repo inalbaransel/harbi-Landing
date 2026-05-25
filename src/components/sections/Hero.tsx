@@ -8,7 +8,7 @@ import { motion } from "motion/react";
 
 export function Hero() {
   return (
-    <main className="w-full max-w-[1400px] mx-auto px-6 flex-grow flex flex-col items-center justify-center relative z-10 pt-24 pb-20 min-h-[90vh]">
+    <main className="w-full max-w-[1400px] mx-auto px-6 flex-grow flex flex-col items-center justify-center relative z-10 pt-36 pb-20 min-h-[90vh]">
       
       {/* Background Glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-purple-600/20 blur-[150px] rounded-[100%] pointer-events-none -z-10" />
